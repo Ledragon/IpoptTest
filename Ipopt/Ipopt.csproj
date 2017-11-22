@@ -35,6 +35,9 @@
     <Reference Include="Cureos.Numerics">
       <HintPath>Ipopt\Cureos.Numerics.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,17 +48,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstraintResult.cs" />
     <Compile Include="IpoptParams.cs" />
     <Compile Include="IpoptReconciliationProblem.cs" />
     <Compile Include="IterationResult.cs" />
     <Compile Include="Jacobian.cs" />
     <Compile Include="JacobianHelper.cs" />
+    <Compile Include="JsonFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReconciliationResult.cs" />
+    <Compile Include="ReconciliationResults.cs" />
+    <Compile Include="ReturnCode.cs" />
     <Compile Include="SolverResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="data\data.json" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y /d "$(ProjectDir)Ipopt"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

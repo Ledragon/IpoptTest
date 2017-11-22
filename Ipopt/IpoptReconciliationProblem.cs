@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Linq;
 using Cureos.Numerics;
-using Ipopt;
 
-namespace WideTech.WiDE.Business.Reconciliation
+namespace Ipopt
 {
     public class IpoptReconciliationProblem : IpoptProblem
     {
